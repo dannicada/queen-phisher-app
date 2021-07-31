@@ -42,8 +42,18 @@ export default {
     '@nuxtjs/pwa',
 
     '@nuxtjs/toast',
+
+    '@nuxtjs/fontawesome',
+
   ],
 
+  fontawesome: {
+    icons: {
+      solid: true
+    },
+    component: 'FaIcon',
+
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'http://localhost:8000',

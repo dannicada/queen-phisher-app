@@ -173,7 +173,10 @@
           </div>
 
           <!-- pricing block -->
-          <div v-if="Object.keys(results).length !== 0" class="bg-gradient-to-b from-black to-gray-900">
+          <div
+            v-if="Object.keys(results).length !== 0"
+            class="bg-gradient-to-b from-black to-gray-900"
+          >
             <div
               class="
                 max-w-screen-xl
@@ -230,6 +233,28 @@
                     Wisdom is easily acquired when hiding under the bed with.
                   </p> -->
                   <div
+                    v-if="result.is_phishing"
+                    href="#"
+                    class="
+                      border border-gray-700
+                      rounded-lg
+                      block
+                      text-center
+                      py-3
+                      px-5
+                      lg:px-8
+                      font-bold
+                      bg-gradient-to-br
+                      from-green-600
+                      to-green-700
+                      text-white
+                      mb-8
+                    "
+                  >
+                    phishing
+                  </div>
+                  <div
+                    v-else
                     href="#"
                     class="
                       border border-gray-700
@@ -252,134 +277,106 @@
                   <ul class="text-gray-200 space-y-4 text-lg">
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[8] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[8] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
-                      <span>https present</span>
+                      <span>ssl certificate valid and trusted</span>
                     </li>
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[4] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[4] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
-                      <span>Unlimited Users</span>
+                      <span>no double slash redirecting</span>
                     </li>
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[3] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[3] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
                       <span>no '@' symbol</span>
                     </li>
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[0] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[0] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
                       <span>not using ip address</span>
                     </li>
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[0] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[0] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
                       <span>Using Stantart Port</span>
                     </li>
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[21] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[21] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
                       <span>High page rank</span>
                     </li>
                     <li class="flex space-x-2 items-center">
                       <div class="w-6 h-6">
-                        <svg
-                          class="text-green-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
+                        <fa-icon
+                          :class="
+                            result.features_set[21] === 1
+                              ? 'text-green-500'
+                              : 'text-red-500'
+                          "
+                          :icon="
+                            result.features_set[21] === 1 ? 'check' : 'times'
+                          "
+                        />
                       </div>
                       <span>No website forwarding</span>
                     </li>
@@ -528,13 +525,14 @@ export default {
   data() {
     return {
       inputUrl: '',
-      result: {},
+      result: {
+      },
     }
   },
   computed: {
-    results(){
+    results() {
       return this.result
-    }
+    },
   },
 
   methods: {
@@ -555,6 +553,7 @@ export default {
         )
         console.log(response)
         this.result = response.data
+        console.log(this.result.features_set[3])
       } catch (err) {
         console.log(err.response)
         if (err.response.status === 400) {
